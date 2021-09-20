@@ -57,7 +57,7 @@ const Signup = () => {
                 <div className='my-2'>
                     Already have account?
                     <Link to='/'>
-                        <b> Create an Account</b>
+                        <b> Login</b>
                     </Link>
                 </div>
             </Form>

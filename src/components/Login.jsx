@@ -33,7 +33,7 @@ const Login = () => {
                 <div className='my-2'>
                     Don't have any accound yet?
                     <Link to='/signup'>
-                        <b> Sign Up</b>
+                        <b> Create an Account</b>
                     </Link>
                 </div>
             </Form>

@@ -1,9 +1,15 @@
 import React from 'react'
 import { Form, Button } from 'react-bootstrap'
+import {
+    BrowserRouter as Router,
+    Link,
+    Switch,
+    Route
+} from 'react-router-dom'
 
 const Login = () => {
     return (
-        <div>
+        <Router>
             {/* <h1>
                 Login
             </h1> */}
@@ -20,22 +26,19 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
-                <div>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="For user" />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="For Vender" />
-                    </Form.Group>
-                </div>
+
                 <Button variant="danger" type="submit" className='w-100'>
                     Submit
                 </Button>
                 <div className='my-2'>
-                    Don't have any accound yet? <b> Sign Up</b>
+                    Don't have any accound yet?
+                    <Link to='/signup'>
+                        <b> Sign Up</b>
+                    </Link>
                 </div>
             </Form>
-        </div>
+            
+        </Router>
     )
 }
 

@@ -1,38 +1,27 @@
-.App {
-  text-align: center;
+/* .MuiDrawer-root MuiDrawer-docked siderBar css-1hsz34s-MuiDrawer-docked{ */
+.MuiDrawer-root {
+  background-color: #B11E24 !important;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.MuiPaper-root 
+.MuiPaper-elevation 
+.MuiPaper-elevation0 
+.MuiDrawer-paper 
+.MuiDrawer-paperAnchorLeft 
+.MuiDrawer-paperAnchorDockedLeft 
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
+  background-color: #B11E24 !important;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-card{
+  background-color: #B11E24 !important;
+  border-radius: 5px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.formInput{
+  background-color: white !important;
+  border-radius: 10px;
 }
-
-.App-link {
-  color: #61dafb;
+.card-img-top{
+  border-radius: 50% !important;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-save{
+  background-color: #008B8B !important;
 }

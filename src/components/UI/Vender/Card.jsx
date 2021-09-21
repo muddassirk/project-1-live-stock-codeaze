@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form, Button, Col, Row } from 'react-bootstrap'
-import dummy from '../../assets/download.png'
+import dummy from '../../../assets/download.png'
 
 const Card = () => {
     return (

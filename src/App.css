@@ -17,6 +17,14 @@
 }
 .primaryColor{
   background-color: #B11E24 !important;
+  border: 1px solid #B11E24 !important;
+}
+.secondaryColor{
+  background-color: #008B8B !important;
+}
+
+.thirdColor{
+  background-color: #E2DEE1 !important;
 }
 .formInput{
   background-color: white !important;
@@ -28,6 +36,11 @@
 .btn-save{
   background-color: #008B8B !important;
 }
+
 .sideBarHeading{
   border-left: 8px solid #B11E24;
+}
+
+.card-margin{
+  margin-top: 30% !important;
 }

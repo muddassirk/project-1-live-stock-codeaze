@@ -10,10 +10,20 @@ import img from './assets/liveStock.JPG'
 import './App.css';
 import Footer from './components/Footer';
 import VenderRouting from './routing/VenderRouting';
+import Header from './components/Constant/Header';
+import NavBar from './components/Constant/NavBar';
+import BuyerDashboard from './components/BuyerDashboard/BuyerDashboard';
+import BuyerProductDetails from './components/BuyerDashboard/BuyerProductDetails';
+import BuyerShopingCart from './components/BuyerDashboard/BuyerShopingCart';
 
 function App() {
   return (
+    <>
+    {/* <BuyerDashboard /> */}
+    {/* <BuyerProductDetails /> */}
+    {/* <BuyerShopingCart /> */}
     <VenderRouting />
+    </>
     // <Router>
     //   <div className="container py-5">
     //     <div className='text-center'>

@@ -15,6 +15,9 @@
   background-color: #B11E24 !important;
   border-radius: 5px;
 }
+.primaryColor{
+  background-color: #B11E24 !important;
+}
 .formInput{
   background-color: white !important;
   border-radius: 10px;
@@ -24,4 +27,7 @@
 }
 .btn-save{
   background-color: #008B8B !important;
+}
+.sideBarHeading{
+  border-left: 8px solid #B11E24;
 }

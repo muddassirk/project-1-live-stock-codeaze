@@ -1,4 +1,10 @@
 import * as React from 'react';
+import {
+  BrowserRouter as Router,
+  Link,
+  Switch,
+  Route
+} from 'react-router-dom'
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -32,8 +38,14 @@ import SearchIcon from '@mui/icons-material/Search';
 import LanguageIcon from '@mui/icons-material/Language';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-import Card from '../components/Vender/Card'
+import Card from '../components/UI/Vender/Card'
 import dummy from '../assets/download.png'
+import VenderProfile from '../components/Vender/VenderProfile';
+import VenderDashboard from '../components/Vender/VenderDashboard';
+import VenderDetail from '../components/Vender/VenderDetail';
+import VenderUpdateBidding from '../components/Vender/VenderUpdateBidding';
+import VenderWallet from '../components/Vender/VenderWallet';
+import VenderNotification from '../components/Vender/VenderNotification';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -158,142 +170,176 @@ export default function VenderRouting() {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar position="fixed" open={open}>
-        <Toolbar style={{ backgroundColor: '#008B8B' }}>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              marginRight: '36px',
-              ...(open && { display: 'none' }),
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            {/* Mini variant drawer */}
-          </Typography>
-          <Typography variant="h4" noWrap component="div">
-            {/* <CircleNotificationsRoundedIcon /> */}
-            <NotificationsIcon />
-          </Typography>
-          <Search >
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-          <Typography variant="h6" noWrap component="div" className='mx-auto'>
-            <LanguageIcon />
-            English
-          </Typography>
-          <Typography variant="h6" noWrap component="div" className='mx-auto'>
-            <AccountCircleIcon />
-            Hery Kleve
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer variant="permanent" open={open} style={{ backgroundColor: '#B11E24' }} >
-        <div className='' style={{ backgroundColor: '#B11E24' }} className='text-white'>
-          <DrawerHeader style={{ backgroundColor: '#B11E24' }}>
-            <IconButton onClick={handleDrawerClose}>
-              {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+    <Router>
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+        <AppBar position="fixed" open={open}>
+          <Toolbar style={{ backgroundColor: '#008B8B' }}>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{
+                marginRight: '36px',
+                ...(open && { display: 'none' }),
+              }}
+            >
+              <MenuIcon />
             </IconButton>
-          </DrawerHeader>
-          {/* <Divider /> */}
-          <h4 className='text-center'>Logo</h4>
-          <div className='d-flex w-100 my-4 mx-auto justify-content-center'>
-            <div className='col-sm-3 w-25' >
-              <img src={dummy} className='w-100 rounded-circle' alt="" />
-            </div>
-            <div className='col-sm-3 d-flex align-items-center justify-content-center'>
-              <div>
+            <Typography variant="h6" noWrap component="div">
+              {/* Mini variant drawer */}
+            </Typography>
+            <Typography variant="h4" noWrap component="div">
+              {/* <CircleNotificationsRoundedIcon /> */}
+              <NotificationsIcon />
+            </Typography>
+            <Search >
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ 'aria-label': 'search' }}
+              />
+            </Search>
+            <Typography variant="h6" noWrap component="div" className='mx-auto'>
+              <LanguageIcon />
+              English
+            </Typography>
+            <Typography variant="h6" noWrap component="div" className='mx-auto'>
+              <AccountCircleIcon />
+              Hery Kleve
+            </Typography>
+          </Toolbar>
+        </AppBar>
+        <Drawer variant="permanent" open={open} style={{ backgroundColor: '#B11E24' }} >
+          <div className='' style={{ backgroundColor: '#B11E24' }} className='text-white'>
+            <DrawerHeader style={{ backgroundColor: '#B11E24' }}>
+              <IconButton onClick={handleDrawerClose}>
+                {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+              </IconButton>
+            </DrawerHeader>
+            {/* <Divider /> */}
+            <h4 className='text-center my-3'>Logo</h4>
+            <div className='d-flex w-100 my-4 mx-auto justify-content-center'>
+              <div className='col-sm-3 w-25' >
+                <img src={dummy} className='w-100 rounded-circle' alt="" />
+              </div>
+              <div className='col-sm-3 my-2 d-flex align-items-center justify-content-center'>
                 <div>
-                  <small>Henry</small>
-                </div>
-                <div>
-                  <small>$000</small>
+                  <div>
+                    <small>Henry</small>
+                  </div>
+                  <div>
+                    <small>$000</small>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <Divider />
+            <List >
+              <ListItem button>
+                <ListItemIcon>
+                  <Link to='/'>
+                    <IconButton className='text-white'>
+                      <HomeIcon />
+                    </IconButton>
+                  </Link>
+                </ListItemIcon>
+                <ListItemText primary='Dashboard' />
+              </ListItem>
+            </List>
+            <List>
+              <ListItem button>
+                <ListItemIcon>
+                  <Link to='/vender-profile'>
+                    <IconButton className='text-white'>
+                      <PersonIcon />
+                    </IconButton>
+                  </Link>
+                </ListItemIcon>
+                <ListItemText primary='My Profile' />
+              </ListItem>
+            </List>
+            <List>
+              <ListItem button>
+                <ListItemIcon>
+                  <Link to='/vender-wallet'>
+                    <IconButton className='text-white'>
+                      <AccountBalanceWalletIcon />
+                    </IconButton>
+                  </Link>
+                </ListItemIcon>
+                <ListItemText primary='Wallet' />
+              </ListItem>
+            </List>
+            <List>
+              <ListItem button>
+                <ListItemIcon>
+                  <Link to='/vender-details'>
+                    <IconButton className='text-white'>
+                      <AddBoxIcon />
+                    </IconButton>
+                  </Link>
+                </ListItemIcon>
+                <ListItemText primary='Vender Details' />
+              </ListItem>
+            </List>
+            <List>
+              <ListItem button>
+                <ListItemIcon>
+                  <Link to='/vender-updateBidding'>
+                    <IconButton className='text-white'>
+                      <SyncIcon />
+                    </IconButton>
+                  </Link>
+                </ListItemIcon>
+                <ListItemText primary='Update Bidding' />
+              </ListItem>
+            </List>
+            <List>
+              <ListItem button>
+                <ListItemIcon>
+                  <Link to='/vender-notification'>
+                    <IconButton className='text-white'>
+                      <NotificationsIcon />
+                    </IconButton>
+                  </Link>
+                </ListItemIcon>
+                <ListItemText primary='Notification' />
+              </ListItem>
+            </List>
+            <Divider />
           </div>
 
-          <Divider />
-          <List >
-            <ListItem button>
-              <ListItemIcon>
-                <IconButton className='text-white'>
-                  <HomeIcon />
-                </IconButton>
-              </ListItemIcon>
-              <ListItemText primary='Dashboard' />
-            </ListItem>
-          </List>
-          <List>
-            <ListItem button>
-              <ListItemIcon>
-                <IconButton className='text-white'>
-                  <PersonIcon />
-                </IconButton>
-              </ListItemIcon>
-              <ListItemText primary='My Profile' />
-            </ListItem>
-          </List>
-          <List>
-            <ListItem button>
-              <ListItemIcon>
-                <IconButton className='text-white'>
-                  <AccountBalanceWalletIcon />
-                </IconButton>
-              </ListItemIcon>
-              <ListItemText primary='Wallet' />
-            </ListItem>
-          </List>
-          <List>
-            <ListItem button>
-              <ListItemIcon>
-                <IconButton className='text-white'>
-                  <AddBoxIcon />
-                </IconButton>
-              </ListItemIcon>
-              <ListItemText primary='Add Bidding' />
-            </ListItem>
-          </List>
-          <List>
-            <ListItem button>
-              <ListItemIcon>
-                <IconButton className='text-white'>
-                  <SyncIcon />
-                </IconButton>
-              </ListItemIcon>
-              <ListItemText primary='Update Bidding' />
-            </ListItem>
-          </List>
-          <List>
-            <ListItem button>
-              <ListItemIcon>
-                <IconButton className='text-white'>
-                  <NotificationsIcon />
-                </IconButton>
-              </ListItemIcon>
-              <ListItemText primary='Notification' />
-            </ListItem>
-          </List>
-          <Divider />
-        </div>
-
-      </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
-        <Card />
+        </Drawer>
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          <DrawerHeader className='p-0 m-0' />
+          {/* <VenderProfile /> */}
+          <Switch>
+            <Route exact path='/'>
+              <VenderDashboard />
+            </Route>
+            <Route path='/vender-profile'>
+              <VenderProfile />
+            </Route>
+            <Route path='/vender-notification'>
+              <VenderNotification />
+            </Route>
+            <Route path='/vender-details'>
+              <VenderDetail />
+            </Route>
+            <Route path='/vender-updateBidding'>
+              <VenderUpdateBidding />
+            </Route>
+            <Route path='/vender-wallet'>
+              <VenderWallet />
+            </Route>
+          </Switch>
+        </Box>
       </Box>
-    </Box>
+    </Router>
   );
 }

@@ -38,14 +38,16 @@ import SearchIcon from '@mui/icons-material/Search';
 import LanguageIcon from '@mui/icons-material/Language';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-import Card from '../components/UI/Vender/Card'
 import dummy from '../assets/download.png'
+import Card from '../components/UI/Vender/Card'
 import VenderProfile from '../components/Vender/VenderProfile';
 import VenderDashboard from '../components/Vender/VenderDashboard';
 import VenderDetail from '../components/Vender/VenderDetail';
 import VenderUpdateBidding from '../components/Vender/VenderUpdateBidding';
 import VenderWallet from '../components/Vender/VenderWallet';
 import VenderNotification from '../components/Vender/VenderNotification';
+import Login from '../components/Login';
+import Signup from '../components/Signup';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -203,13 +205,34 @@ export default function VenderRouting() {
                 inputProps={{ 'aria-label': 'search' }}
               />
             </Search>
-            <Typography variant="h6" noWrap component="div" className='mx-auto'>
-              <LanguageIcon />
-              English
+            <Typography variant="h6" noWrap component="div" className='d-flex justify-content-center align-items-center mx-auto'>
+              <p className='px-1'>
+                <LanguageIcon />
+              </p>
+
+              <p className='px-1'>
+                English
+              </p>
             </Typography>
-            <Typography variant="h6" noWrap component="div" className='mx-auto'>
-              <AccountCircleIcon />
-              Hery Kleve
+            <Typography variant="h6" noWrap component="div" className='d-flex justify-content-center align-items-center mx-auto'>
+              <p className='px-1'>
+                <AccountCircleIcon />
+              </p>
+              <p className='px-1'>
+                Fayaz Khan
+              </p>
+            </Typography>
+            <Typography variant="h6" noWrap component="div" className='d-flex justify-content-center align-items-center mx-auto'>
+              <p className='px-1'>
+                <Link to='/login' className='vender-routing-link'>
+                  Login
+                </Link>
+              </p>
+              <p className='px-1'>
+                <Link to='/signup' className='vender-routing-link'>
+                  Signup
+                </Link>
+              </p>
             </Typography>
           </Toolbar>
         </AppBar>
@@ -222,95 +245,87 @@ export default function VenderRouting() {
             </DrawerHeader>
             {/* <Divider /> */}
             <h4 className='text-center my-3'>Logo</h4>
+            {/* <div className='d-flex w-100 my-4 mx-auto justify-content-center'> */}
             <div className='d-flex w-100 my-4 mx-auto justify-content-center'>
               <div className='col-sm-3 w-25' >
                 <img src={dummy} className='w-100 rounded-circle' alt="" />
               </div>
-              <div className='col-sm-3 my-2 d-flex align-items-center justify-content-center'>
+            </div>
+            {/* <div className='col-sm-3 my-2 d-flex align-items-center justify-content-center'> */}
+            <div className='text-center'>
+              <div>
                 <div>
-                  <div>
-                    <small>Henry</small>
-                  </div>
-                  <div>
-                    <small>$000</small>
-                  </div>
+                  <small>Fayaz Khan</small>
+                </div>
+                <div>
+                  <small>$000</small>
                 </div>
               </div>
             </div>
+            {/* </div> */}
 
             <Divider />
             <List >
               <ListItem button>
                 <ListItemIcon>
-                  <Link to='/'>
+                  <Link to='/' className='vender-routing-link'>
                     <IconButton className='text-white'>
                       <HomeIcon />
                     </IconButton>
+                    <ListItemText className='px-3' primary='Dashboard' />
                   </Link>
                 </ListItemIcon>
-                <ListItemText primary='Dashboard' />
               </ListItem>
             </List>
             <List>
               <ListItem button>
                 <ListItemIcon>
-                  <Link to='/vender-profile'>
+                  <Link to='/vender-profile' className='vender-routing-link'>
                     <IconButton className='text-white'>
                       <PersonIcon />
                     </IconButton>
+                    <ListItemText className='px-3' primary='My Profile' />
                   </Link>
                 </ListItemIcon>
-                <ListItemText primary='My Profile' />
               </ListItem>
             </List>
             <List>
               <ListItem button>
                 <ListItemIcon>
-                  <Link to='/vender-wallet'>
+                  <Link to='/vender-wallet' className='vender-routing-link'>
                     <IconButton className='text-white'>
                       <AccountBalanceWalletIcon />
                     </IconButton>
+                    <ListItemText className='px-3' primary='Wallet' />
                   </Link>
                 </ListItemIcon>
-                <ListItemText primary='Wallet' />
               </ListItem>
             </List>
             <List>
               <ListItem button>
                 <ListItemIcon>
-                  <Link to='/vender-details'>
+                  <Link to='/vender-details' className='vender-routing-link'>
                     <IconButton className='text-white'>
                       <AddBoxIcon />
                     </IconButton>
+                    <ListItemText className='px-3' primary='Vender Details' />
                   </Link>
                 </ListItemIcon>
-                <ListItemText primary='Vender Details' />
               </ListItem>
             </List>
             <List>
               <ListItem button>
                 <ListItemIcon>
-                  <Link to='/vender-updateBidding'>
+                  <Link to='/vender-updateBidding' className='vender-routing-link'>
                     <IconButton className='text-white'>
                       <SyncIcon />
                     </IconButton>
+                    <ListItemText className='px-3' primary='Update and Delete' />
                   </Link>
                 </ListItemIcon>
-                <ListItemText primary='Update Bidding' />
               </ListItem>
             </List>
-            <List>
-              <ListItem button>
-                <ListItemIcon>
-                  <Link to='/vender-notification'>
-                    <IconButton className='text-white'>
-                      <NotificationsIcon />
-                    </IconButton>
-                  </Link>
-                </ListItemIcon>
-                <ListItemText primary='Notification' />
-              </ListItem>
-            </List>
+
             <Divider />
           </div>
 
@@ -337,9 +352,15 @@ export default function VenderRouting() {
             <Route path='/vender-wallet'>
               <VenderWallet />
             </Route>
+            <Route path='/signup'>
+              <Signup />
+            </Route>
+            <Route path='/login'>
+              <Login />
+            </Route>
           </Switch>
         </Box>
       </Box>
-    </Router>
+    </Router >
   );
 }

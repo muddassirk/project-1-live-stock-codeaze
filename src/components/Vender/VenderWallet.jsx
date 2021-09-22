@@ -48,7 +48,7 @@ const VenderWallet = () => {
                 <div className="col-md-8 mx-auto px-3">
                     <Table bordered hover className='mt-5 text-center border rounded bg-white'>
                         <thead>
-                            <tr className='my-3 border border-dark'>
+                            <tr className='my-3 border'>
                                 <th>Date</th>
                                 <th>Amount</th>
                                 <th>Status</th>

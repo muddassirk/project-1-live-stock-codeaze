@@ -10,10 +10,10 @@ import {
 const Login = () => {
     return (
         <Router>
-            {/* <h1>
+            <h1 className='text-center'>
                 Login
-            </h1> */}
-            <Form className='my-4'>
+            </h1>
+            <Form className='my-4 w-50 mx-auto'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" />

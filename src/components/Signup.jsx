@@ -11,7 +11,10 @@ import {
 const Signup = () => {
     return (
         <Router>
-            <Form className='my-4'>
+            <h1 className='text-center'>
+                Signup
+            </h1>
+            <Form className='my-4 w-50 mx-auto'>
                 <Form.Group className="mb-3" controlId="formBasicName">
                     <Form.Label>Name</Form.Label>
                     <Form.Control type="name" placeholder="Enter your name" />

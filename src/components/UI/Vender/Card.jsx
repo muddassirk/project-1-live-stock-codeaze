@@ -16,7 +16,7 @@ const Card = () => {
                                 Name
                             </Form.Label>
                             <Col sm="8">
-                                <Form.Control plaintext readOnly defaultValue="Henry kelin" />
+                                <Form.Control plaintext readOnly defaultValue="Fayaz Khan" />
                             </Col>
                         </Form.Group>
                         <Form.Group as={Row} className="mb-3 formInput" controlId="formPlaintextUserName">
@@ -24,7 +24,7 @@ const Card = () => {
                                 User Name
                             </Form.Label>
                             <Col sm="8">
-                                <Form.Control plaintext readOnly defaultValue="HenryKelin" />
+                                <Form.Control plaintext readOnly defaultValue="FayazKhan" />
                             </Col>
                         </Form.Group>
                         <Form.Group as={Row} className="mb-3 formInput" controlId="formPlaintextEmail">

@@ -44,3 +44,21 @@
 .card-margin{
   margin-top: 30% !important;
 }
+
+.border-left-{
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.border-right-{
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.vender-routing-link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none !important;
+  color: #fff  !important;
+}
